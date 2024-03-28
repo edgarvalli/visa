@@ -17,6 +17,11 @@ from sendgrid.helpers.mail import Mail
 
 from embassy import *
 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.utils import formatdate
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 
@@ -83,6 +88,33 @@ JS_SCRIPT = ("var req = new XMLHttpRequest();"
              "return req.responseText;")
 
 def send_notification(title, msg):
+    # subject = title
+    # body = msg
+    sender = "no-reply@etyhsa.com"
+    # recipients = ["edgarvalli80@gmail.com"]
+    password = "Zap18898"
+
+    ms = smtplib.SMTP('smtp.office365.com', 587)
+    ms.ehlo()
+    ms.starttls()
+    ms.login(sender, password)
+
+    body = MIMEMultipart()
+    body['From'] = sender
+    body['To'] = "edgarvalli80@gmail.com"
+    body['Date'] = formatdate(localtime=True)
+    body['Subject'] = "[VISA-NOTIFICATION]" + title
+    
+    m = MIMEText(msg)
+
+    body.attach(m)
+
+    print(msg)
+
+    ms.send_message(body)
+    ms.quit()
+
+def _send_notification(title, msg):
     print(f"Sending notification!")
     if SENDGRID_API_KEY:
         message = Mail(from_email=USERNAME, to_emails=USERNAME, subject=msg, html_content=msg)
@@ -175,9 +207,12 @@ def reschedule(date):
     if(r.text.find('Successfully Scheduled') != -1):
         title = "SUCCESS"
         msg = f"Rescheduled Successfully! {date} {time}"
+        send_notification(title=title, msg=msg)
+
     else:
         title = "FAIL"
         msg = f"Reschedule Failed!!! {date} {time}"
+        send_notification(title=title, msg=msg)
     return [title, msg]
 
 
@@ -196,6 +231,7 @@ def get_time(date):
     data = json.loads(content)
     time = data.get("available_times")[-1]
     print(f"Got time successfully! {date} {time}")
+    send_notification("HORARIOS DISPONIBLES", f"Got time successfully! {date} {time}")
     return time
 
 
@@ -256,7 +292,7 @@ if __name__ == "__main__":
                 msg = f"List is empty, Probabely banned!\n\tSleep for {BAN_COOLDOWN_TIME} hours!\n"
                 print(msg)
                 info_logger(LOG_FILE_NAME, msg)
-                send_notification("BAN", msg)
+                #send_notification("BAN", msg)
                 driver.get(SIGN_OUT_LINK)
                 time.sleep(BAN_COOLDOWN_TIME * hour)
                 first_loop = True
@@ -272,6 +308,7 @@ if __name__ == "__main__":
                 if date:
                     # A good date to schedule for
                     END_MSG_TITLE, msg = reschedule(date)
+                    send_notification(END_MSG_TITLE, msg=msg)
                     break
                 RETRY_WAIT_TIME = random.randint(RETRY_TIME_L_BOUND, RETRY_TIME_U_BOUND)
                 t1 = time.time()
@@ -298,7 +335,7 @@ if __name__ == "__main__":
 
 print(msg)
 info_logger(LOG_FILE_NAME, msg)
-send_notification(END_MSG_TITLE, msg)
+#send_notification(END_MSG_TITLE, msg)
 driver.get(SIGN_OUT_LINK)
 driver.stop_client()
 driver.quit()
