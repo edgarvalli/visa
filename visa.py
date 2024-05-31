@@ -4,6 +4,7 @@ import random
 import requests
 import configparser
 from datetime import datetime
+import http.client, urllib
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -33,7 +34,8 @@ PASSWORD = config['PERSONAL_INFO']['PASSWORD']
 # https://ais.usvisa-info.com/en-am/niv/schedule/{SCHEDULE_ID}/appointment
 SCHEDULE_ID = config['PERSONAL_INFO']['SCHEDULE_ID']
 # Target Period:
-PRIOD_START = config['PERSONAL_INFO']['PRIOD_START']
+# PRIOD_START = config['PERSONAL_INFO']['PRIOD_START']
+PRIOD_START = datetime.today().strftime('%Y-%m-%d')
 PRIOD_END = config['PERSONAL_INFO']['PRIOD_END']
 # Embassy Section:
 YOUR_EMBASSY = config['PERSONAL_INFO']['YOUR_EMBASSY'] 
@@ -88,31 +90,43 @@ JS_SCRIPT = ("var req = new XMLHttpRequest();"
              "return req.responseText;")
 
 def send_notification(title, msg):
+
+
+    conn = http.client.HTTPSConnection("api.pushover.net:443")
+    conn.request("POST", "/1/messages.json",
+    urllib.parse.urlencode({
+        "token": "aqzna2wzfcdfbtn6vpy8sr954s4uzc",
+        "user": "u6tpsyrrgy1wnoryb9o4sgyn4dnmev",
+        "message": msg,
+        "title": title,
+    }), { "Content-type": "application/x-www-form-urlencoded" })
+    conn.getresponse()
+
     # subject = title
     # body = msg
-    sender = "no-reply@etyhsa.com"
+    # sender = "no-reply@etyhsa.com"
     # recipients = ["edgarvalli80@gmail.com"]
-    password = "Zap18898"
+    # password = "Zap18898"
 
-    ms = smtplib.SMTP('smtp.office365.com', 587)
-    ms.ehlo()
-    ms.starttls()
-    ms.login(sender, password)
+    # ms = smtplib.SMTP('smtp.office365.com', 587)
+    # ms.ehlo()
+    # ms.starttls()
+    # ms.login(sender, password)
 
-    body = MIMEMultipart()
-    body['From'] = sender
-    body['To'] = "edgarvalli80@gmail.com"
-    body['Date'] = formatdate(localtime=True)
-    body['Subject'] = "[VISA-NOTIFICATION]" + title
+    # body = MIMEMultipart()
+    # body['From'] = sender
+    # body['To'] = "edgarvalli80@gmail.com"
+    # body['Date'] = formatdate(localtime=True)
+    # body['Subject'] = "[VISA-NOTIFICATION]" + title
     
-    m = MIMEText(msg)
+    # m = MIMEText(msg)
 
-    body.attach(m)
+    # body.attach(m)
 
-    print(msg)
+    # print(msg)
 
-    ms.send_message(body)
-    ms.quit()
+    # ms.send_message(body)
+    # ms.quit()
 
 def _send_notification(title, msg):
     print(f"Sending notification!")
