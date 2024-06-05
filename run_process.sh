@@ -1,3 +1,3 @@
 #!/bin/sh
 
-python3 visa.py
+python3 start_process_visa.py
