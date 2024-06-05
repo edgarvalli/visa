@@ -1,0 +1,212 @@
+16:54:46.860060:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 16:54:46.859059
+
+16:54:47.414484:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+16:55:21.436162:
+Break the loop after exception!
+
+16:56:32.866116:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 16:56:32.865080
+
+16:56:33.695439:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+16:57:00.781184:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 16:57:00.781185
+
+16:57:01.392016:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+16:57:33.462594:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 16:57:33.462595
+
+16:57:34.294210:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+16:58:01.078585:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 16:58:01.078586
+
+16:58:01.646396:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+16:58:34.151394:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 16:58:34.151394
+
+16:58:34.779429:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+16:59:00.961467:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 16:59:00.960472
+
+16:59:01.645314:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+16:59:13.287842:
+Break the loop after exception!
+
+16:59:13.289842:
+Break the loop after exception!
+
+16:59:13.289842:
+Break the loop after exception!
+
+16:59:13.294325:
+Break the loop after exception!
+
+16:59:13.294325:
+Break the loop after exception!
+
+17:00:45.422875:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:00:45.422875
+
+17:00:46.706692:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:01:17.250548:
+Break the loop after exception!
+
+17:01:32.692414:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:01:32.692414
+
+17:01:33.258689:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:02:30.836949:
+Break the loop after exception!
+
+17:02:45.307275:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:02:45.306735
+
+17:02:46.179056:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:06:13.107893:
+Break the loop after exception!
+
+17:14:32.182640:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:14:32.181639
+
+17:14:33.072120:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:15:33.946954:
+Break the loop after exception!
+
+17:15:48.479658:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:15:48.478667
+
+17:15:50.638755:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:16:14.474879:
+Break the loop after exception!
+
+17:16:30.776215:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:16:30.776215
+
+17:16:31.962537:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:16:43.697270:
+Break the loop after exception!
+
+17:17:17.877744:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:17:17.877745
+
+17:17:18.899038:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:17:55.790227:
+Break the loop after exception!
+
+17:18:08.157379:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:18:08.156379
+
+17:18:08.759413:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:18:36.296033:
+Break the loop after exception!
+
+17:18:49.078764:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:18:49.078765
+
+17:18:49.629506:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:20:52.442449:
+Break the loop after exception!
+
+17:21:08.883600:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:21:08.883600
+
+17:21:10.117366:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:23:41.869530:
+Break the loop after exception!
+
+17:32:45.650285:
+Starting reschedule
+17:33:31.564304:
+Starting reschedule
+17:33:37.213763:
+Starting reschedule
+17:36:15.427755:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:36:15.427756
+
+17:36:16.485222:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:37:50.107708:
+Break the loop after exception!
+
+17:38:02.328633:
+------------------------------------------------------------
+Request count: 1, Log time: 2024-06-05 17:38:02.327633
+
+17:38:02.985487:
+List is empty, Probabely banned!
+	Sleep for 1.0 hours!
+
+17:41:46.940877:
+Break the loop after exception!
+

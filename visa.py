@@ -284,7 +284,6 @@ if LOCAL_USE:
 else:
     driver = webdriver.Remote(command_executor=HUB_ADDRESS, options=webdriver.ChromeOptions())
 
-
 if __name__ == "__main__":
     first_loop = True
     while 1:
@@ -308,6 +307,8 @@ if __name__ == "__main__":
                 info_logger(LOG_FILE_NAME, msg)
                 #send_notification("BAN", msg)
                 driver.get(SIGN_OUT_LINK)
+                driver.stop_client()
+                driver.quit()
                 time.sleep(BAN_COOLDOWN_TIME * hour)
                 first_loop = True
             else:
@@ -334,6 +335,8 @@ if __name__ == "__main__":
                     # Let program rest a little
                     send_notification("REST", f"Break-time after {WORK_LIMIT_TIME} hours | Repeated {Req_count} times")
                     driver.get(SIGN_OUT_LINK)
+                    driver.stop_client()
+                    driver.quit()
                     time.sleep(WORK_COOLDOWN_TIME * hour)
                     first_loop = True
                 else:
